@@ -24,11 +24,15 @@ public class InicioControlador implements Initializable {
     @FXML
     private TableColumn<Nota, String> colTexto;
     @FXML
+    private TableColumn<Nota, LocalDate> colRecordatorio;
+    @FXML
     private TableColumn<Nota, String> colFecha;
     @FXML
     private TextField txtTitulo;
     @FXML
     private ComboBox<String> txtCategoria;
+    @FXML
+    private DatePicker recordatorio;
     @FXML
     private TextArea txtNota;
 

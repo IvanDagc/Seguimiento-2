@@ -3,25 +3,28 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="538.0" prefWidth="600.0" style="-fx-background-color: #6aa6cf;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.notas.controladores.InicioControlador">
+<AnchorPane prefHeight="538.0" prefWidth="603.0" style="-fx-background-color: #6aa6cf;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.notas.controladores.InicioControlador">
 
     <Label layoutX="27.0" layoutY="35.0" text="Titulo:" />
-    <TextField fx:id="txtTitulo" layoutX="100.0" layoutY="30.0" minWidth="270.0" />
+    <TextField fx:id="txtTitulo" layoutX="108.0" layoutY="31.0" minWidth="270.0" />
 
     <Label layoutX="27.0" layoutY="85.0" text="Categoria:" />
-    <ComboBox fx:id="txtCategoria" layoutX="100.0" layoutY="81.0" minWidth="270.0" />
+    <ComboBox fx:id="txtCategoria" layoutX="108.0" layoutY="81.0" minWidth="270.0" />
     
     <Label layoutX="27.0" layoutY="135.0" text="Nota:" />
-    <TextArea fx:id="txtNota" layoutX="100.0" layoutY="130.0" prefHeight="100.0" prefWidth="270.0" />
+    <TextArea fx:id="txtNota" layoutX="108.0" layoutY="129.0" prefHeight="100.0" prefWidth="270.0" />
 
-    <Button fx:id="btnNuevaNota" layoutX="100.0" layoutY="246.0" onAction="#crearNota" text="Crear nueva nota" />
+    <Button fx:id="btnNuevaNota" layoutX="100.0" layoutY="300.0" onAction="#crearNota" text="Crear nueva nota" />
 
-    <TableView fx:id="tablaNotas" layoutX="100.0" layoutY="293.0" prefHeight="187.0" prefWidth="450.0">
+    <TableView fx:id="tablaNotas" layoutX="9.0" layoutY="336.0" prefHeight="187.0" prefWidth="585.0">
         <columns>
-            <TableColumn fx:id="colTitulo" prefWidth="117.00000762939453" text="Título" />
-            <TableColumn fx:id="colCategoria" prefWidth="80.5999755859375" text="Categoría" />
-            <TableColumn fx:id="colTexto" prefWidth="106.20001220703125" text="Nota" />
-            <TableColumn fx:id="colFecha" prefWidth="146.59994506835938" text="Fecha creación" />
+            <TableColumn fx:id="colTitulo" prefWidth="90.60000610351562" text="Título" />
+            <TableColumn fx:id="colCategoria" prefWidth="94.0" text="Categoría" />
+            <TableColumn fx:id="colTexto" prefWidth="99.79998779296875" text="Nota" />
+            <TableColumn fx:id="colFecha" prefWidth="151.39996337890625" text="Fecha creación" />
+         <TableColumn fx:id="colRecordatorio" prefWidth="167.79998779296875" text="Recordatorio" />
         </columns>
     </TableView>
+   <Label layoutX="29.0" layoutY="251.0" text="Recordatorio:" />
+   <DatePicker fx:id="fechaRecordatorio" layoutX="108.0" layoutY="246.0" prefHeight="26.0" prefWidth="186.0" />
 </AnchorPane>
