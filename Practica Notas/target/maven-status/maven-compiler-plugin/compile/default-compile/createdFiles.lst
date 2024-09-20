@@ -1,0 +1,6 @@
+co\edu\uniquindio\notas\modelo\Nota.class
+co\edu\uniquindio\notas\controladores\initializable.class
+co\edu\uniquindio\notas\modelo\Nota$NotaBuilder.class
+co\edu\uniquindio\notas\app\NotasApp.class
+co\edu\uniquindio\notas\modelo\NotaPrincipal.class
+co\edu\uniquindio\notas\controladores\InicioControlador.class
