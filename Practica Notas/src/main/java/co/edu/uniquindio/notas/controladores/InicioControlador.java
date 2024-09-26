@@ -50,7 +50,7 @@ public class InicioControlador implements Initializable {
             txtTitulo.clear();
             txtCategoria.setValue(null);
             txtNota.clear();
-
+            //txtRecordatorio.setValue(null);
             tablaNotas.setItems(FXCollections.observableArrayList(notaPrincipal.listarNotas()));
 
         } catch (Exception ex) {
@@ -73,7 +73,7 @@ public class InicioControlador implements Initializable {
         colTexto.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDescripcion()));
         colFecha.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getFechaCreacion().toString()));
         txtCategoria.setItems( FXCollections.observableArrayList(notaPrincipal.listarCategorias()) );
-
+        //colRecordatorio.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getTitulo()));
     }
 
 
