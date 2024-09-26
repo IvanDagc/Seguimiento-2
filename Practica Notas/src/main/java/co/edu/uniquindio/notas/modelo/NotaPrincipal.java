@@ -24,6 +24,14 @@ public class NotaPrincipal {
         notas.add(nota);
     }
 
+    public void actualizarNota(String titulo, String descripcion, String categoria) throws IllegalArgumentException {
+
+    }
+    public void eliminarNota(String titulo) throws IllegalArgumentException {
+
+    }
+    
+
     public ArrayList<String> listarCategorias () {
         ArrayList<String> categorias = new ArrayList<>();
         categorias.add("Trabajo");
