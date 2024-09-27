@@ -11,7 +11,7 @@ public class NotaPrincipal {
         this.notas = new ArrayList<>();
     }
 
-    public void agregarNota(String titulo, String descripcion, String categoria, LocalDate value) throws IllegalArgumentException {
+    public void agregarNota(String titulo, String descripcion, String categoria, LocalDate recordatorio) throws IllegalArgumentException {
         if (titulo.isEmpty() || descripcion.isEmpty() || categoria.isEmpty()) {
             throw new IllegalArgumentException("Todos los campos son obligatorios");
         }
@@ -20,6 +20,7 @@ public class NotaPrincipal {
                 .descripcion(descripcion)
                 .fechaCreacion(LocalDateTime.now())
                 .categoria(categoria)
+                .recordatorio(recordatorio)
                 .build();
         notas.add(nota);
     }

@@ -25,7 +25,7 @@ public class InicioControlador implements Initializable {
     @FXML
     private TableColumn<Nota, String> colTexto;
     @FXML
-    private TableColumn<Nota, LocalDate> colRecordatorio;
+    private TableColumn<Nota, String> colRecordatorio;
     @FXML
     private TableColumn<Nota, String> colFecha;
     @FXML
@@ -40,7 +40,7 @@ public class InicioControlador implements Initializable {
     private final NotaPrincipal notaPrincipal;
 
 
-    
+
     public InicioControlador() {
         notaPrincipal = new NotaPrincipal();
     }
@@ -76,8 +76,9 @@ public class InicioControlador implements Initializable {
         colCategoria.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCategoria()));
         colTexto.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDescripcion()));
         colFecha.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getFechaCreacion().toString()));
+        colRecordatorio.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getRecordatorio().toString()));
+
         txtCategoria.setItems( FXCollections.observableArrayList(notaPrincipal.listarCategorias()) );
-        //colRecordatorio.setCellValueFactory(cellData -> new SimpleDateFormat(cellData.getValue().getRecordatorio().format()));
     }
 
 
