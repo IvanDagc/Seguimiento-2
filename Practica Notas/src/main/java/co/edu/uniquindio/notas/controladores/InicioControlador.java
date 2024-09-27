@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ResourceBundle;
@@ -32,25 +33,28 @@ public class InicioControlador implements Initializable {
     @FXML
     private ComboBox<String> txtCategoria;
     @FXML
-    private DatePicker recordatorio;
+    private DatePicker fechaRecordatorio;
     @FXML
     private TextArea txtNota;
 
     private final NotaPrincipal notaPrincipal;
 
+
+    
     public InicioControlador() {
         notaPrincipal = new NotaPrincipal();
     }
 
     public void crearNota(ActionEvent e) throws Exception{
         try {
-            notaPrincipal.agregarNota(txtTitulo.getText(), txtNota.getText(), txtCategoria.getValue());
+            notaPrincipal.agregarNota(txtTitulo.getText(), txtNota.getText(), txtCategoria.getValue(), fechaRecordatorio.getValue());
+
             mostrarAlerta("Nota creada correctamente", Alert.AlertType.INFORMATION);
 
             txtTitulo.clear();
             txtCategoria.setValue(null);
             txtNota.clear();
-            //txtRecordatorio.setValue(null);
+            fechaRecordatorio.setValue(null);
             tablaNotas.setItems(FXCollections.observableArrayList(notaPrincipal.listarNotas()));
 
         } catch (Exception ex) {
@@ -73,7 +77,7 @@ public class InicioControlador implements Initializable {
         colTexto.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDescripcion()));
         colFecha.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getFechaCreacion().toString()));
         txtCategoria.setItems( FXCollections.observableArrayList(notaPrincipal.listarCategorias()) );
-        //colRecordatorio.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getTitulo()));
+        //colRecordatorio.setCellValueFactory(cellData -> new SimpleDateFormat(cellData.getValue().getRecordatorio().format()));
     }
 
 
